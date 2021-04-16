@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on KC BLOG</title>
-    <link>http://example.org/posts/</link>
+    <link>https://kingzcheung.github.io/posts/</link>
     <description>Recent content in Posts on KC BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© Copyright 2021</copyright>
-    <lastBuildDate>Thu, 22 Oct 2020 14:17:27 +0800</lastBuildDate><atom:link href="http://example.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 14:17:27 +0800</lastBuildDate><atom:link href="https://kingzcheung.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ANTLR4 匹配基础数据类型常用词法规则</title>
-      <link>http://example.org/posts/antlr4-base-rule/</link>
+      <link>https://kingzcheung.github.io/posts/antlr4-base-rule/</link>
       <pubDate>Thu, 22 Oct 2020 14:17:27 +0800</pubDate>
       
-      <guid>http://example.org/posts/antlr4-base-rule/</guid>
+      <guid>https://kingzcheung.github.io/posts/antlr4-base-rule/</guid>
       <description>ANTLR4 匹配基础数据类型常用词法规则
 匹配数字 INT: &amp;#39;0&amp;#39;..&amp;#39;9&amp;#39;+ ; // 或者 INT2: [0-9]+; 匹配浮点数 FLOAT: DIGIT+&amp;#39;.</description>
     </item>
     
     <item>
       <title>命令行</title>
-      <link>http://example.org/posts/command-line-inteface/</link>
+      <link>https://kingzcheung.github.io/posts/command-line-inteface/</link>
       <pubDate>Thu, 13 Aug 2020 14:21:27 +0800</pubDate>
       
-      <guid>http://example.org/posts/command-line-inteface/</guid>
+      <guid>https://kingzcheung.github.io/posts/command-line-inteface/</guid>
       <description>命令行 什么是命令行 命令提示符是在操作系统中，提示进行命令输入的一种工作提示符。在Linux 中命令行指的其实就是Linux 命令，对于Linux系统来说，无论是中央处理器、内存、磁盘驱动器、键盘、鼠标，还是用户等都是文件，因此Linux命令也是一个文件，他可能是文本文件，也可能是二进制文件，或者其他文件。</description>
     </item>
     
     <item>
       <title>Linux：CentOS7防火墙 开放端口配置</title>
-      <link>http://example.org/posts/firewall-centos7/</link>
+      <link>https://kingzcheung.github.io/posts/firewall-centos7/</link>
       <pubDate>Sun, 16 Dec 2018 14:26:03 +0800</pubDate>
       
-      <guid>http://example.org/posts/firewall-centos7/</guid>
+      <guid>https://kingzcheung.github.io/posts/firewall-centos7/</guid>
       <description>笔记，查询用。
 查看已开放的端口
 firewall-cmd --list-ports 开放端口（开放后需要要重启防火墙才生效）</description>
@@ -40,29 +40,29 @@ firewall-cmd --list-ports 开放端口（开放后需要要重启防火墙才生
     
     <item>
       <title>自定义一个守护进程的服务</title>
-      <link>http://example.org/posts/custom-daemon-service/</link>
+      <link>https://kingzcheung.github.io/posts/custom-daemon-service/</link>
       <pubDate>Fri, 10 Aug 2018 14:34:29 +0800</pubDate>
       
-      <guid>http://example.org/posts/custom-daemon-service/</guid>
+      <guid>https://kingzcheung.github.io/posts/custom-daemon-service/</guid>
       <description>无论是nginx,apache,还是php-fpm,ftp,甚至ssh,都是以service的形式存在于系统之中，有时候我们可能需要为自己写的脚本做成一个守护进程的服务。Systemd 是用来启动守护进程的工具，平时我们使用的systemctl就是用 Systemd 的管理命令。</description>
     </item>
     
     <item>
       <title>Centos7 通过官方yum源安装指定版本mysql</title>
-      <link>http://example.org/posts/add-mysql-yum-repo/</link>
+      <link>https://kingzcheung.github.io/posts/add-mysql-yum-repo/</link>
       <pubDate>Fri, 06 Apr 2018 14:23:44 +0800</pubDate>
       
-      <guid>http://example.org/posts/add-mysql-yum-repo/</guid>
+      <guid>https://kingzcheung.github.io/posts/add-mysql-yum-repo/</guid>
       <description>mysql5.6为例
  添加MySQL Yum Repository 先到此页面下载</description>
     </item>
     
     <item>
       <title>mysqldump 用法</title>
-      <link>http://example.org/posts/mysqldump-usage/</link>
+      <link>https://kingzcheung.github.io/posts/mysqldump-usage/</link>
       <pubDate>Fri, 16 Mar 2018 14:31:58 +0800</pubDate>
       
-      <guid>http://example.org/posts/mysqldump-usage/</guid>
+      <guid>https://kingzcheung.github.io/posts/mysqldump-usage/</guid>
       <description>导出MySQL数据库和表的结构和内容的工具
  用法:
 mysqldump [OPTIONS] database [tables] mysqldump [OPTIONS] --databases [OPTIONS] DB1 [DB2 DB3.</description>

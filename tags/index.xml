@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on KC BLOG</title>
-    <link>http://example.org/tags/</link>
+    <link>https://kingzcheung.github.io/tags/</link>
     <description>Recent content in Tags on KC BLOG</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Copyright 2021</copyright><atom:link href="http://example.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© Copyright 2021</copyright><atom:link href="https://kingzcheung.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
