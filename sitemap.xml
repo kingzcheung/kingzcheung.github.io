@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://example.org/posts/antlr4-base-rule/</loc>
+    <lastmod>2020-10-22T14:17:27+08:00</lastmod>
+  </url><url>
+    <loc>http://example.org/</loc>
+    <lastmod>2020-10-22T14:17:27+08:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/</loc>
+    <lastmod>2020-10-22T14:17:27+08:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/command-line-inteface/</loc>
+    <lastmod>2020-08-13T14:21:27+08:00</lastmod>
+  </url><url>
+    <loc>http://example.org/about/</loc>
+    <lastmod>2019-04-19T21:37:58+05:30</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/firewall-centos7/</loc>
+    <lastmod>2018-12-16T14:26:03+08:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/custom-daemon-service/</loc>
+    <lastmod>2018-08-10T14:34:29+08:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/add-mysql-yum-repo/</loc>
+    <lastmod>2018-04-06T14:23:44+08:00</lastmod>
+  </url><url>
+    <loc>http://example.org/posts/mysqldump-usage/</loc>
+    <lastmod>2018-03-16T14:31:58+08:00</lastmod>
+  </url><url>
+    <loc>http://example.org/tags/</loc>
+  </url>
+</urlset>
