@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Macbook M1 brew 安装 swoole 常见问题 - KC BLOG</title><link rel="icon" type="image/png" href=icons/favicon.ico /><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Macbook M1 brew 安装 swoole 常见问题" />
+<meta property="og:description" content="解决步骤如下
+尝试安装 安装命令如下:
+pecl install swoole 第一个问题：fatal error: &lsquo;openssl/ssl." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kingzcheung.github.io/posts/macbook-m1-brew-install-swoole/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-27T11:18:47&#43;08:00" />
+<meta property="article:modified_time" content="2021-04-27T11:18:47&#43;08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Macbook M1 brew 安装 swoole 常见问题"/>
+<meta name="twitter:description" content="解决步骤如下
+尝试安装 安装命令如下:
+pecl install swoole 第一个问题：fatal error: &lsquo;openssl/ssl."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="https://kingzcheung.github.io/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://kingzcheung.github.io/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="https://kingzcheung.github.io/css/custom.css" />
+	<link rel="stylesheet" type="text/css" href="https://kingzcheung.github.io/css/dark.css"  />
+	<link rel="stylesheet" type="text/css" href="https://kingzcheung.github.io/css/custom-dark.css"  />
+
+	<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	<script src="https://kingzcheung.github.io/js/main.js"></script>
+	<script src="https://kingzcheung.github.io/js/abc.js"></script>
+	<script src="https://kingzcheung.github.io/js/xyz.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<base href="https://kingzcheung.github.io/">
+	<h1 class="site-title"><a href="https://kingzcheung.github.io/">KC BLOG</a></h1>
+	<div class="site-description"><h2>笔记小站 - 做个认真的人</h2><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/kingzcheung" title="Github"><i data-feather="github"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/posts">All posts</a>
+			</li>
+			
+			<li>
+				<a href="/about">About</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Macbook M1 brew 安装 swoole 常见问题</h1>
+			<div class="meta">Posted at &mdash; Apr 27, 2021</div>
+		</div>
+
+		<div class="markdown">
+			<p>解决步骤如下</p>
+<h3 id="尝试安装">尝试安装</h3>
+<p>安装命令如下:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">pecl install swoole
+</code></pre></div><h3 id="第一个问题fatal-error-opensslsslh-file-not-found">第一个问题：fatal error: &lsquo;openssl/ssl.h&rsquo; file not found</h3>
+<p>这个不是M1的问题，如果使用brew 更新过openssl，大概率都会出现这个问题。</p>
+<p>原因是找不到 openssl 的相关类库路径（可能是brew 安装的原因），如果你不想动openssl的相关东西的话，openssl 其实提供了两个环境变量: <code>LDFLAGS</code>、<code>CPPFLAGS</code>。这个在使用brew 安装 openssl的时候其实有给出。如果不知道值是多少可以通过<code>brew reinstall openssl</code> 看看 brew 给的结果：</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ brew reinstall <span style="color:#268bd2">openssl</span>
+<span style="color:#719e07">==</span>&gt; Downloading https://ghcr.io/v2/homebrew/core/openssl/1.1/manifests/1.1.1k
+Already downloaded: /Users/kingzcheung/Library/Caches/Homebrew/downloads/2efe91096994c33489c066631735a35cc3863cae64fc2ad5b305675fe9d24fed--openssl@1.1-1.1.1k.bottle_manifest.json
+<span style="color:#719e07">==</span>&gt; Downloading https://ghcr.io/v2/homebrew/core/openssl/1.1/blobs/sha256:0a75e0f116c0653bc7a2b422e5dc500e7e51557303aa4fca9c1a28786189c1da
+Already downloaded: /Users/kingzcheung/Library/Caches/Homebrew/downloads/5808c4424ac006e0ed6bb4ae6b4e716151c0fd953ed73b05d7e3885c6a7cfaa9--openssl@1.1--1.1.1k.arm64_big_sur.bottle.tar.gz
+<span style="color:#719e07">==</span>&gt; Reinstalling openssl@1.1
+<span style="color:#719e07">==</span>&gt; Pouring openssl@1.1--1.1.1k.arm64_big_sur.bottle.tar.gz
+<span style="color:#719e07">==</span>&gt; Regenerating CA certificate bundle from keychain, this may take a <span style="color:#719e07">while</span>...
+<span style="color:#719e07">==</span>&gt; Caveats
+A CA file has been bootstrapped using certificates from the system
+keychain. To add additional certificates, place .pem files in
+  /opt/homebrew/etc/openssl@1.1/certs
+
+and run
+  /opt/homebrew/opt/openssl@1.1/bin/c_rehash
+
+openssl@1.1 is keg-only, which means it was not symlinked into /opt/homebrew,
+because macOS provides LibreSSL.
+
+If you need to have openssl@1.1 first in your PATH, run:
+  <span style="color:#b58900">echo</span> <span style="color:#2aa198">&#39;export PATH=&#34;/opt/homebrew/opt/openssl@1.1/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.zshrc
+
+For compilers to find openssl@1.1 you may need to set:
+  <span style="color:#b58900">export</span> <span style="color:#268bd2">LDFLAGS</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;-L/opt/homebrew/opt/openssl@1.1/lib&#34;</span>
+  <span style="color:#b58900">export</span> <span style="color:#268bd2">CPPFLAGS</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;-I/opt/homebrew/opt/openssl@1.1/include&#34;</span>
+
+<span style="color:#719e07">==</span>&gt; Summary
+🍺  /opt/homebrew/Cellar/openssl@1.1/1.1.1k: 8,071 files, 18MB
+</code></pre></div><p>因此我们的安装命令变成这样：</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#268bd2">LDFLAGS</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;-L/opt/homebrew/opt/openssl@1.1/lib&#34;</span> <span style="color:#268bd2">CPPFLAGS</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;-I/opt/homebrew/opt/openssl@1.1/include&#34;</span> pecl install swoole
+</code></pre></div><p>安装swoole时会有安装扩展选项需要输入，也可以通过pecl 的 <code>--configureoptions </code> 传入，因此命令最后变成这样子：</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#268bd2">LDFLAGS</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;-L/opt/homebrew/opt/openssl@1.1/lib&#34;</span> <span style="color:#268bd2">CPPFLAGS</span><span style="color:#719e07">=</span><span style="color:#2aa198">&#34;-I/opt/homebrew/opt/openssl@1.1/include&#34;</span> pecl install --configureoptions <span style="color:#2aa198">&#39;enable-sockets=&#34;yes&#34; enable-openssl=&#34;yes&#34; enable-http2=&#34;yes&#34; enable-mysqlnd=&#34;yes&#34; enable-swoole-json=&#34;no&#34; enable-swoole-curl=&#34;yes&#34; &#39;</span> swoole
+</code></pre></div><h3 id="第二个问题-提示-pcre2h-file-not-found">第二个问题： 提示 pcre2.h file not found</h3>
+<p>需要安装 pcre。</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">brew install pcre
+</code></pre></div><p>但是此时依然没有解决，因此和上面的类似。这时我们可以通过软连接解决。</p>
+<p>找到brew 安装的pcre 中<code>pcre2.h</code>的所在目录:</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">/opt/homebrew/Cellar/pcre2/10.36/include/pcre2.h
+</code></pre></div><p>连接到PHP（我这是用<code>brew install php@8.0</code>安装的php8.0.3）</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">ln -s /opt/homebrew/Cellar/pcre2/10.36/include/pcre2.h /opt/homebrew/Cellar/php/8.0.3/include/php/ext/pcre/pcre2.h
+</code></pre></div><h3 id="第三个问题error-failed-to-mkdir-opthomebrewcellarphpxxxpecl20200930">第三个问题：ERROR: failed to mkdir /opt/homebrew/Cellar/php/xxx/pecl/20200930</h3>
+<blockquote>
+<p>xxx 表示具体版本号，我这里是8.0.3</p>
+</blockquote>
+<p>这里提示无法在<code>/opt/homebrew/Cellar/php/8.0.3/pecl</code> 创建<code>20200930</code>目录。</p>
+<p>我们先看看<code>/opt/homebrew/Cellar/php/8.0.3</code></p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ ls -la 
+total <span style="color:#2aa198">96</span>
+drwxr-xr-x  <span style="color:#2aa198">15</span> kingzcheung  admin    <span style="color:#2aa198">480</span>  <span style="color:#2aa198">4</span> <span style="color:#2aa198">15</span> 18:38 .
+drwxr-xr-x   <span style="color:#2aa198">3</span> kingzcheung  admin     <span style="color:#2aa198">96</span>  <span style="color:#2aa198">4</span> <span style="color:#2aa198">15</span> 18:38 ..
+drwxr-xr-x   <span style="color:#2aa198">4</span> kingzcheung  admin    <span style="color:#2aa198">128</span>  <span style="color:#2aa198">3</span>  <span style="color:#2aa198">3</span> 00:37 .bottle
+drwxr-xr-x   <span style="color:#2aa198">3</span> kingzcheung  admin     <span style="color:#2aa198">96</span>  <span style="color:#2aa198">3</span>  <span style="color:#2aa198">3</span> 00:37 .brew
+-rw-r--r--   <span style="color:#2aa198">1</span> kingzcheung  admin   <span style="color:#2aa198">4985</span>  <span style="color:#2aa198">4</span> <span style="color:#2aa198">15</span> 18:38 INSTALL_RECEIPT.json
+-rw-r--r--   <span style="color:#2aa198">1</span> kingzcheung  admin   <span style="color:#2aa198">3204</span>  <span style="color:#2aa198">3</span>  <span style="color:#2aa198">3</span> 00:37 LICENSE
+-rw-r--r--   <span style="color:#2aa198">1</span> kingzcheung  admin  <span style="color:#2aa198">24067</span>  <span style="color:#2aa198">3</span>  <span style="color:#2aa198">3</span> 00:37 NEWS
+-rw-r--r--   <span style="color:#2aa198">1</span> kingzcheung  admin   <span style="color:#2aa198">5228</span>  <span style="color:#2aa198">3</span>  <span style="color:#2aa198">3</span> 00:37 README.md
+drwxr-xr-x  <span style="color:#2aa198">12</span> kingzcheung  admin    <span style="color:#2aa198">384</span>  <span style="color:#2aa198">4</span> <span style="color:#2aa198">15</span> 18:38 bin
+-rw-r--r--   <span style="color:#2aa198">1</span> kingzcheung  admin    <span style="color:#2aa198">553</span>  <span style="color:#2aa198">4</span> <span style="color:#2aa198">15</span> 18:38 homebrew.mxcl.php.plist
+drwxr-xr-x   <span style="color:#2aa198">3</span> kingzcheung  admin     <span style="color:#2aa198">96</span>  <span style="color:#2aa198">3</span>  <span style="color:#2aa198">3</span> 00:37 include
+drwxr-xr-x   <span style="color:#2aa198">4</span> kingzcheung  admin    <span style="color:#2aa198">128</span>  <span style="color:#2aa198">3</span>  <span style="color:#2aa198">3</span> 00:37 lib
+lrwxr-xr-x   <span style="color:#2aa198">1</span> kingzcheung  admin     <span style="color:#2aa198">26</span>  <span style="color:#2aa198">4</span> <span style="color:#2aa198">15</span> 18:38 pecl -&gt; /opt/homebrew/lib/php/pecl
+drwxr-xr-x   <span style="color:#2aa198">3</span> kingzcheung  admin     <span style="color:#2aa198">96</span>  <span style="color:#2aa198">4</span> <span style="color:#2aa198">15</span> 18:38 sbin
+drwxr-xr-x   <span style="color:#2aa198">4</span> kingzcheung  admin    <span style="color:#2aa198">128</span>  <span style="color:#2aa198">3</span>  <span style="color:#2aa198">3</span> 00:37 share
+</code></pre></div><p>发现 <code>pecl</code> 是 <code>/opt/homebrew/lib/php/pecl</code>的软连接。但是通过 命令发现 <code>/opt/homebrew/lib/php/pecl</code> 并不存在，因此我们需要手动创建此目录。</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir /opt/homebrew/lib/php/pecl
+</code></pre></div><p>重新安装 swoole，所有问题解决。</p>
+<div class="highlight"><pre style="color:#93a1a1;background-color:#002b36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ php --ri swoole
+
+swoole
+
+<span style="color:#268bd2">Swoole</span> <span style="color:#719e07">=</span>&gt; enabled
+<span style="color:#268bd2">Author</span> <span style="color:#719e07">=</span>&gt; Swoole Team &lt;team@swoole.com&gt;
+<span style="color:#268bd2">Version</span> <span style="color:#719e07">=</span>&gt; 4.6.5
+<span style="color:#268bd2">Built</span> <span style="color:#719e07">=</span>&gt; Apr <span style="color:#2aa198">16</span> <span style="color:#2aa198">2021</span> 10:24:12
+<span style="color:#268bd2">coroutine</span> <span style="color:#719e07">=</span>&gt; enabled with boost asm context
+<span style="color:#268bd2">kqueue</span> <span style="color:#719e07">=</span>&gt; enabled
+<span style="color:#268bd2">rwlock</span> <span style="color:#719e07">=</span>&gt; enabled
+<span style="color:#268bd2">sockets</span> <span style="color:#719e07">=</span>&gt; enabled
+<span style="color:#268bd2">openssl</span> <span style="color:#719e07">=</span>&gt; OpenSSL 1.1.1k  <span style="color:#2aa198">25</span> Mar <span style="color:#2aa198">2021</span>
+<span style="color:#268bd2">dtls</span> <span style="color:#719e07">=</span>&gt; enabled
+<span style="color:#268bd2">http2</span> <span style="color:#719e07">=</span>&gt; enabled
+curl-native <span style="color:#719e07">=</span>&gt; enabled
+<span style="color:#268bd2">pcre</span> <span style="color:#719e07">=</span>&gt; enabled
+<span style="color:#268bd2">zlib</span> <span style="color:#719e07">=</span>&gt; 1.2.11
+<span style="color:#268bd2">mysqlnd</span> <span style="color:#719e07">=</span>&gt; enabled
+<span style="color:#268bd2">async_redis</span> <span style="color:#719e07">=</span>&gt; enabled
+
+<span style="color:#268bd2">Directive</span> <span style="color:#719e07">=</span>&gt; Local <span style="color:#268bd2">Value</span> <span style="color:#719e07">=</span>&gt; Master Value
+swoole.enable_coroutine <span style="color:#719e07">=</span>&gt; <span style="color:#268bd2">On</span> <span style="color:#719e07">=</span>&gt; On
+swoole.enable_library <span style="color:#719e07">=</span>&gt; <span style="color:#268bd2">On</span> <span style="color:#719e07">=</span>&gt; On
+swoole.enable_preemptive_scheduler <span style="color:#719e07">=</span>&gt; <span style="color:#268bd2">Off</span> <span style="color:#719e07">=</span>&gt; Off
+swoole.display_errors <span style="color:#719e07">=</span>&gt; <span style="color:#268bd2">On</span> <span style="color:#719e07">=</span>&gt; On
+swoole.use_shortname <span style="color:#719e07">=</span>&gt; <span style="color:#268bd2">On</span> <span style="color:#719e07">=</span>&gt; On
+swoole.unixsock_buffer_size <span style="color:#719e07">=</span>&gt; <span style="color:#268bd2">262144</span> <span style="color:#719e07">=</span>&gt; <span style="color:#2aa198">262144</span>
+</code></pre></div>
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		<div id="disqus_thread"></div>
+<script type="text/javascript">
+	(function () {
+		
+		
+		if (window.location.hostname == "localhost")
+			return;
+
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		var disqus_shortname = 'kingzcheung.com';
+		dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+		Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> © Copyright 2021 |  <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-123-45', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+<script>feather.replace()</script>
+</body>
+</html>
