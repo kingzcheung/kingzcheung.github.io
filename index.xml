@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kingzcheung</title>
-    <link>http://example.org/</link>
+    <link>http://blog.kingzcheung.com/</link>
     <description>Recent content on kingzcheung</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Oct 2020 12:08:42 +0800</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 12:08:42 +0800</lastBuildDate><atom:link href="http://blog.kingzcheung.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ANTLR4 匹配基础数据类型常用词法规则</title>
-      <link>http://example.org/posts/antlr4-base-rule/</link>
+      <link>http://blog.kingzcheung.com/posts/antlr4-base-rule/</link>
       <pubDate>Thu, 22 Oct 2020 12:08:42 +0800</pubDate>
       
-      <guid>http://example.org/posts/antlr4-base-rule/</guid>
+      <guid>http://blog.kingzcheung.com/posts/antlr4-base-rule/</guid>
       <description>ANTLR4 匹配基础数据类型常用词法规则
 匹配数字 INT: &#39;0&#39;..&#39;9&#39;+ ; // 或者 INT2: [0-9]+; 匹配浮点数 FLOAT: DIGIT+&#39;.&#39; DIGIT* //匹配1.39 3.1415926 | &#39;.&#39;DIGIT+ //匹配 .1 或者 .1415926 ; fragment DIGIT: [0-9]; 匹配字符串常量 STRING: &#39;&amp;quot;&#39; (ESC|.)*? &#39;&amp;quot;&#39;; fragment ESC: &#39;\\&amp;quot;&#39; | &#39;\\\\&#39;; //双字符序列 \&amp;quot; 和 \\ 匹配注释 LINE_COMMENT:&#39;//&#39; .*?&#39;\r&#39;? &#39;\n&#39; -&amp;gt; skip; COMMENT: &#39;/*&#39; .*? &#39;*/&#39; -&amp;gt; skip; 匹配空白字符 WS: (&#39; &#39;|&#39;\t&#39;|&#39;\r&#39;|&#39;\n&#39;)+ -&amp;gt;skip; //or WS2: [ \t\r\n]+ -&amp;gt;skip; 反向丢弃 STUFF: ~&#39;\n&#39;+ -&amp;gt;skip; // 除了&#39;\n&#39; 之外的字符全部丢弃 </description>
     </item>
     
     <item>
       <title>Linux：CentOS7防火墙 开放端口配置</title>
-      <link>http://example.org/posts/firewall-centos7/</link>
+      <link>http://blog.kingzcheung.com/posts/firewall-centos7/</link>
       <pubDate>Fri, 16 Nov 2018 12:10:58 +0800</pubDate>
       
-      <guid>http://example.org/posts/firewall-centos7/</guid>
+      <guid>http://blog.kingzcheung.com/posts/firewall-centos7/</guid>
       <description>笔记，查询用。
 查看已开放的端口
 firewall-cmd --list-ports 开放端口（开放后需要要重启防火墙才生效）
@@ -37,10 +37,10 @@ systemctl disable firewalld 停止防火墙
     
     <item>
       <title>自定义一个守护进程的服务</title>
-      <link>http://example.org/posts/custom-daemon-service/</link>
+      <link>http://blog.kingzcheung.com/posts/custom-daemon-service/</link>
       <pubDate>Fri, 10 Aug 2018 12:12:13 +0800</pubDate>
       
-      <guid>http://example.org/posts/custom-daemon-service/</guid>
+      <guid>http://blog.kingzcheung.com/posts/custom-daemon-service/</guid>
       <description>无论是nginx,apache,还是php-fpm,ftp,甚至ssh,都是以service的形式存在于系统之中，有时候我们可能需要为自己写的脚本做成一个守护进程的服务。Systemd 是用来启动守护进程的工具，平时我们使用的systemctl就是用 Systemd 的管理命令。
 sudo systemctl start nginx.service #立即启动一个服务 sudo systemctl restart nginx.service #重启一个服务 sudo systemctl stop nginx.service #停止一个服务 sudo systemctl reload nginx.service #重载服务配置 sudo systemctl status nginx.service #查看服务状态 sudo systemctl daemon-reload # 重载Systemd 配置 ..... #日志相关 sudo journalctl #查看所有日志 sudo journalctl --since=&amp;#34;2012-10-30 18:17:16&amp;#34; #根据时间查看日志 sudo journalctl -u nginx.service -n #根据服务查看日志， -n表示行数，默认10行 sudo journalctl -f # 实时显示日志，和tail -f 有点像 ...... 以一个php脚本为例子,实现一个每2秒输出文本到控制台：
 环境：
@@ -49,10 +49,10 @@ sudo systemctl start nginx.service #立即启动一个服务 sudo systemctl rest
     
     <item>
       <title>Docker 容器启动后造成服务器无法连接的问题</title>
-      <link>http://example.org/posts/docker-brigde-conn/</link>
+      <link>http://blog.kingzcheung.com/posts/docker-brigde-conn/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/docker-brigde-conn/</guid>
+      <guid>http://blog.kingzcheung.com/posts/docker-brigde-conn/</guid>
       <description>这些天碰到一个比较奇怪的问题，当使用终端远程连接服务器，使用 Docker 去部署新应用的时候，突然ssh直接掉线了，而且再也无法连接。甚至连PING也无法连接了。因为是物理服务器，于是直接为物理服务器接上显示器，发现服务器一切都是正常的。
  接着进行一些测试进行定位。首先先尝试重启机器，尝试远程ssh连接的时候，是正常的。说明问题出现在docker上。当时启动应用时，问题复现了。而与网络连接相关的就是docker network了。
 使用ifconfig 命令检查一下网卡，把启动应用的虚拟网卡删除试试：
@@ -68,10 +68,10 @@ networks: app_net: ipam: driver: default config: - subnet: &amp;#34;172.18.0.0/1
     
     <item>
       <title>Macbook M1 brew 安装 swoole 常见问题</title>
-      <link>http://example.org/posts/macbook-m1-brew-install-swoole/</link>
+      <link>http://blog.kingzcheung.com/posts/macbook-m1-brew-install-swoole/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/macbook-m1-brew-install-swoole/</guid>
+      <guid>http://blog.kingzcheung.com/posts/macbook-m1-brew-install-swoole/</guid>
       <description>解决步骤如下
 尝试安装 安装命令如下:
 pecl install swoole 第一个问题：fatal error: ‘openssl/ssl.h’ file not found 这个不是M1的问题，如果使用brew 更新过openssl，大概率都会出现这个问题。
