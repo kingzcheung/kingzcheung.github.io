@@ -1,102 +1,82 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>KC BLOG</title>
-    <link>https://kingzcheung.github.io/</link>
-    <description>Recent content on KC BLOG</description>
+    <title>kingzcheung</title>
+    <link>http://example.org/</link>
+    <description>Recent content on kingzcheung</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>© Copyright 2021</copyright>
-    <lastBuildDate>Fri, 02 Jul 2021 16:18:33 +0800</lastBuildDate><atom:link href="https://kingzcheung.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker 容器启动后造成服务器无法连接的问题</title>
-      <link>https://kingzcheung.github.io/posts/docker-brigde-conn/</link>
-      <pubDate>Fri, 02 Jul 2021 16:18:33 +0800</pubDate>
-      
-      <guid>https://kingzcheung.github.io/posts/docker-brigde-conn/</guid>
-      <description>这些天碰到一个比较奇怪的问题，当使用终端远程连接服务器，使用 Docker 去部署新应用的时候，突然ssh直接掉线了，而且再也无法连接。甚至连PING也无法连接了。因为是物理服务器，于是直接为物理服务器接上显示器，发现服务器一切都是正常的。
- 接着进行一些测试进行定位。首先先尝试重启机器，尝试远程ssh连接的时候，是正常的。说明问题出现在docker上。当时启动应用时，问题复现了。而与网络连接相关的就是docker network了。</description>
-    </item>
-    
-    <item>
-      <title>Macbook M1 brew 安装 swoole 常见问题</title>
-      <link>https://kingzcheung.github.io/posts/macbook-m1-brew-install-swoole/</link>
-      <pubDate>Tue, 27 Apr 2021 11:18:47 +0800</pubDate>
-      
-      <guid>https://kingzcheung.github.io/posts/macbook-m1-brew-install-swoole/</guid>
-      <description>解决步骤如下
-尝试安装 安装命令如下:
-pecl install swoole 第一个问题：fatal error: &amp;lsquo;openssl/ssl.</description>
-    </item>
-    
+    <lastBuildDate>Thu, 22 Oct 2020 12:08:42 +0800</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ANTLR4 匹配基础数据类型常用词法规则</title>
-      <link>https://kingzcheung.github.io/posts/antlr4-base-rule/</link>
-      <pubDate>Thu, 22 Oct 2020 14:17:27 +0800</pubDate>
+      <link>http://example.org/posts/antlr4-base-rule/</link>
+      <pubDate>Thu, 22 Oct 2020 12:08:42 +0800</pubDate>
       
-      <guid>https://kingzcheung.github.io/posts/antlr4-base-rule/</guid>
+      <guid>http://example.org/posts/antlr4-base-rule/</guid>
       <description>ANTLR4 匹配基础数据类型常用词法规则
-匹配数字 INT: &amp;#39;0&amp;#39;..&amp;#39;9&amp;#39;+ ; // 或者 INT2: [0-9]+; 匹配浮点数 FLOAT: DIGIT+&amp;#39;.</description>
-    </item>
-    
-    <item>
-      <title>命令行</title>
-      <link>https://kingzcheung.github.io/posts/command-line-inteface/</link>
-      <pubDate>Thu, 13 Aug 2020 14:21:27 +0800</pubDate>
-      
-      <guid>https://kingzcheung.github.io/posts/command-line-inteface/</guid>
-      <description>命令行 什么是命令行 命令提示符是在操作系统中，提示进行命令输入的一种工作提示符。在Linux 中命令行指的其实就是Linux 命令，对于Linux系统来说，无论是中央处理器、内存、磁盘驱动器、键盘、鼠标，还是用户等都是文件，因此Linux命令也是一个文件，他可能是文本文件，也可能是二进制文件，或者其他文件。</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://kingzcheung.github.io/about/</link>
-      <pubDate>Fri, 19 Apr 2019 21:37:58 +0530</pubDate>
-      
-      <guid>https://kingzcheung.github.io/about/</guid>
-      <description>程序员一枚，专注于 WEB 开发、服务器开发。
-主要语言：JavaScript、PHP、golang。</description>
+匹配数字 INT: &#39;0&#39;..&#39;9&#39;+ ; // 或者 INT2: [0-9]+; 匹配浮点数 FLOAT: DIGIT+&#39;.&#39; DIGIT* //匹配1.39 3.1415926 | &#39;.&#39;DIGIT+ //匹配 .1 或者 .1415926 ; fragment DIGIT: [0-9]; 匹配字符串常量 STRING: &#39;&amp;quot;&#39; (ESC|.)*? &#39;&amp;quot;&#39;; fragment ESC: &#39;\\&amp;quot;&#39; | &#39;\\\\&#39;; //双字符序列 \&amp;quot; 和 \\ 匹配注释 LINE_COMMENT:&#39;//&#39; .*?&#39;\r&#39;? &#39;\n&#39; -&amp;gt; skip; COMMENT: &#39;/*&#39; .*? &#39;*/&#39; -&amp;gt; skip; 匹配空白字符 WS: (&#39; &#39;|&#39;\t&#39;|&#39;\r&#39;|&#39;\n&#39;)+ -&amp;gt;skip; //or WS2: [ \t\r\n]+ -&amp;gt;skip; 反向丢弃 STUFF: ~&#39;\n&#39;+ -&amp;gt;skip; // 除了&#39;\n&#39; 之外的字符全部丢弃 </description>
     </item>
     
     <item>
       <title>Linux：CentOS7防火墙 开放端口配置</title>
-      <link>https://kingzcheung.github.io/posts/firewall-centos7/</link>
-      <pubDate>Sun, 16 Dec 2018 14:26:03 +0800</pubDate>
+      <link>http://example.org/posts/firewall-centos7/</link>
+      <pubDate>Fri, 16 Nov 2018 12:10:58 +0800</pubDate>
       
-      <guid>https://kingzcheung.github.io/posts/firewall-centos7/</guid>
+      <guid>http://example.org/posts/firewall-centos7/</guid>
       <description>笔记，查询用。
 查看已开放的端口
-firewall-cmd --list-ports 开放端口（开放后需要要重启防火墙才生效）</description>
+firewall-cmd --list-ports 开放端口（开放后需要要重启防火墙才生效）
+firewall-cmd --zone=public --add-port=3338/tcp --permanent 关闭端口（关闭后需要要重启防火墙才生效）
+firewall-cmd --zone=public --remove-port=3338/tcp --permanent 重启防火墙
+firewall-cmd --reload 开机启动防火墙
+systemctl enable firewalld 开启防火墙
+systemctl start firewalld 禁止防火墙开机启动
+systemctl disable firewalld 停止防火墙
+ systemctl stop firewalld </description>
     </item>
     
     <item>
       <title>自定义一个守护进程的服务</title>
-      <link>https://kingzcheung.github.io/posts/custom-daemon-service/</link>
-      <pubDate>Fri, 10 Aug 2018 14:34:29 +0800</pubDate>
+      <link>http://example.org/posts/custom-daemon-service/</link>
+      <pubDate>Fri, 10 Aug 2018 12:12:13 +0800</pubDate>
       
-      <guid>https://kingzcheung.github.io/posts/custom-daemon-service/</guid>
-      <description>无论是nginx,apache,还是php-fpm,ftp,甚至ssh,都是以service的形式存在于系统之中，有时候我们可能需要为自己写的脚本做成一个守护进程的服务。Systemd 是用来启动守护进程的工具，平时我们使用的systemctl就是用 Systemd 的管理命令。</description>
+      <guid>http://example.org/posts/custom-daemon-service/</guid>
+      <description>无论是nginx,apache,还是php-fpm,ftp,甚至ssh,都是以service的形式存在于系统之中，有时候我们可能需要为自己写的脚本做成一个守护进程的服务。Systemd 是用来启动守护进程的工具，平时我们使用的systemctl就是用 Systemd 的管理命令。
+sudo systemctl start nginx.service #立即启动一个服务 sudo systemctl restart nginx.service #重启一个服务 sudo systemctl stop nginx.service #停止一个服务 sudo systemctl reload nginx.service #重载服务配置 sudo systemctl status nginx.service #查看服务状态 sudo systemctl daemon-reload # 重载Systemd 配置 ..... #日志相关 sudo journalctl #查看所有日志 sudo journalctl --since=&amp;#34;2012-10-30 18:17:16&amp;#34; #根据时间查看日志 sudo journalctl -u nginx.service -n #根据服务查看日志， -n表示行数，默认10行 sudo journalctl -f # 实时显示日志，和tail -f 有点像 ...... 以一个php脚本为例子,实现一个每2秒输出文本到控制台：
+环境：
+ ubuntu 16.04 PHP 7.2.4  PHP 脚本如下:</description>
     </item>
     
     <item>
-      <title>Centos7 通过官方yum源安装指定版本mysql</title>
-      <link>https://kingzcheung.github.io/posts/add-mysql-yum-repo/</link>
-      <pubDate>Fri, 06 Apr 2018 14:23:44 +0800</pubDate>
+      <title>Docker 容器启动后造成服务器无法连接的问题</title>
+      <link>http://example.org/posts/docker-brigde-conn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kingzcheung.github.io/posts/add-mysql-yum-repo/</guid>
-      <description>mysql5.6为例
- 添加MySQL Yum Repository 先到此页面下载</description>
+      <guid>http://example.org/posts/docker-brigde-conn/</guid>
+      <description>这些天碰到一个比较奇怪的问题，当使用终端远程连接服务器，使用 Docker 去部署新应用的时候，突然ssh直接掉线了，而且再也无法连接。甚至连PING也无法连接了。因为是物理服务器，于是直接为物理服务器接上显示器，发现服务器一切都是正常的。
+ 接着进行一些测试进行定位。首先先尝试重启机器，尝试远程ssh连接的时候，是正常的。说明问题出现在docker上。当时启动应用时，问题复现了。而与网络连接相关的就是docker network了。
+使用ifconfig 命令检查一下网卡，把启动应用的虚拟网卡删除试试：
+ifconfig br-*** down 发现 ssh 可以连接了，进一步定位到是因为 docker 生成的虚拟网卡出现问题。
+我们都知道，Docker 容器网络默认使用的是 bridge 桥接模式，当容器第一次启动，又不指定网络时，Docker 会基于目录名生成对应名称的虚拟网络。如果生成的虚拟网络的网段和宿主机的网段冲突了，就有可能造成网络请求问题。
+问题找到了，那么解决有以下几个思路：
+ 修改宿主机网段。 指定 docker network 生成的ip 段  如果宿主网段没有什么所谓，可以采用第一个思路解决。这样能完全避开docker network 自动生成的网段。
+如果采用第二种思路，意味着我们每部署一个应用都必须手动指定network的ip段。
+通过提前创建 network 并手动指定网段：
+docker network create --subnet=172.18.0.0/16 app_net docker-compose.yml 创建方式:
+networks: app_net: ipam: driver: default config: - subnet: &amp;#34;172.18.0.0/16&amp;#34; subnet 可以是其他任意空闲段网段，只要不和宿主机网段冲突即可。</description>
     </item>
     
     <item>
-      <title>mysqldump 用法</title>
-      <link>https://kingzcheung.github.io/posts/mysqldump-usage/</link>
-      <pubDate>Fri, 16 Mar 2018 14:31:58 +0800</pubDate>
+      <title>Macbook M1 brew 安装 swoole 常见问题</title>
+      <link>http://example.org/posts/macbook-m1-brew-install-swoole/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://kingzcheung.github.io/posts/mysqldump-usage/</guid>
-      <description>导出MySQL数据库和表的结构和内容的工具
- 用法:
-mysqldump [OPTIONS] database [tables] mysqldump [OPTIONS] --databases [OPTIONS] DB1 [DB2 DB3.</description>
+      <guid>http://example.org/posts/macbook-m1-brew-install-swoole/</guid>
+      <description>解决步骤如下
+尝试安装 安装命令如下:
+pecl install swoole 第一个问题：fatal error: ‘openssl/ssl.h’ file not found 这个不是M1的问题，如果使用brew 更新过openssl，大概率都会出现这个问题。
+原因是找不到 openssl 的相关类库路径（可能是brew 安装的原因），如果你不想动openssl的相关东西的话，openssl 其实提供了两个环境变量: LDFLAGS、CPPFLAGS。这个在使用brew 安装 openssl的时候其实有给出。如果不知道值是多少可以通过brew reinstall openssl 看看 brew 给的结果：
+$ brew reinstall openssl ==&amp;gt; Downloading https://ghcr.io/v2/homebrew/core/openssl/1.1/manifests/1.1.1k Already downloaded: /Users/kingzcheung/Library/Caches/Homebrew/downloads/2efe91096994c33489c066631735a35cc3863cae64fc2ad5b305675fe9d24fed--openssl@1.1-1.1.1k.bottle_manifest.json ==&amp;gt; Downloading https://ghcr.io/v2/homebrew/core/openssl/1.1/blobs/sha256:0a75e0f116c0653bc7a2b422e5dc500e7e51557303aa4fca9c1a28786189c1da Already downloaded: /Users/kingzcheung/Library/Caches/Homebrew/downloads/5808c4424ac006e0ed6bb4ae6b4e716151c0fd953ed73b05d7e3885c6a7cfaa9--openssl@1.1--1.1.1k.arm64_big_sur.bottle.tar.gz ==&amp;gt; Reinstalling openssl@1.1 ==&amp;gt; Pouring openssl@1.1--1.1.1k.arm64_big_sur.bottle.tar.gz ==&amp;gt; Regenerating CA certificate bundle from keychain, this may take a while... ==&amp;gt; Caveats A CA file has been bootstrapped using certificates from the system keychain.</description>
     </item>
     
   </channel>
