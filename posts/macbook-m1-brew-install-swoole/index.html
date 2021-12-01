@@ -35,25 +35,25 @@ $ brew reinstall openssl ==&gt; Downloading https://ghcr.io/v2/homebrew/core/ope
   
   
   
-  <link rel="preload stylesheet" as="style" href="http://blog.kingzcheung.com/app.min.css" />
+  <link rel="preload stylesheet" as="style" href="/app.min.css" />
 
   
-  <link rel="preload stylesheet" as="style" href="http://blog.kingzcheung.com/an-old-hope.min.css" />
+  <link rel="preload stylesheet" as="style" href="/an-old-hope.min.css" />
   <script
     defer
-    src="http://blog.kingzcheung.com/highlight.min.js"
+    src="/highlight.min.js"
     onload="hljs.initHighlightingOnLoad();"
   ></script>
   
 
   
-  <link rel="preload" as="image" href="http://blog.kingzcheung.com/theme.png" />
+  <link rel="preload" as="image" href="/theme.png" />
 
   
 
   
-  <link rel="icon" href="http://blog.kingzcheung.com/favicon.ico" />
-  <link rel="apple-touch-icon" href="http://blog.kingzcheung.com/apple-touch-icon.png" />
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
   
   <meta name="generator" content="Hugo 0.89.4" />
@@ -75,7 +75,7 @@ pecl install swoole 第一个问题：fatal error: ‘openssl/ssl.h’ file not 
 原因是找不到 openssl 的相关类库路径（可能是brew 安装的原因），如果你不想动openssl的相关东西的话，openssl 其实提供了两个环境变量: LDFLAGS、CPPFLAGS。这个在使用brew 安装 openssl的时候其实有给出。如果不知道值是多少可以通过brew reinstall openssl 看看 brew 给的结果：
 $ brew reinstall openssl ==&gt; Downloading https://ghcr.io/v2/homebrew/core/openssl/1.1/manifests/1.1.1k Already downloaded: /Users/kingzcheung/Library/Caches/Homebrew/downloads/2efe91096994c33489c066631735a35cc3863cae64fc2ad5b305675fe9d24fed--openssl@1.1-1.1.1k.bottle_manifest.json ==&gt; Downloading https://ghcr.io/v2/homebrew/core/openssl/1.1/blobs/sha256:0a75e0f116c0653bc7a2b422e5dc500e7e51557303aa4fca9c1a28786189c1da Already downloaded: /Users/kingzcheung/Library/Caches/Homebrew/downloads/5808c4424ac006e0ed6bb4ae6b4e716151c0fd953ed73b05d7e3885c6a7cfaa9--openssl@1.1--1.1.1k.arm64_big_sur.bottle.tar.gz ==&gt; Reinstalling openssl@1.1 ==&gt; Pouring openssl@1.1--1.1.1k.arm64_big_sur.bottle.tar.gz ==&gt; Regenerating CA certificate bundle from keychain, this may take a while... ==&gt; Caveats A CA file has been bootstrapped using certificates from the system keychain." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://blog.kingzcheung.com/posts/macbook-m1-brew-install-swoole/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="/posts/macbook-m1-brew-install-swoole/" /><meta property="article:section" content="posts" />
 
 
 
@@ -108,7 +108,7 @@ $ brew reinstall openssl ==&gt; Downloading https://ghcr.io/v2/homebrew/core/ope
     <header class="header">
   
   <p class="logo">
-    <a class="site-name" href="http://blog.kingzcheung.com/">kingzcheung</a><a class="btn-dark"></a>
+    <a class="site-name" href="/">kingzcheung</a><a class="btn-dark"></a>
   </p>
   
 
@@ -258,7 +258,7 @@ swoole.unixsock_buffer_size <span style="color:#f92672">=</span>&gt; 262144 <spa
   
   <nav class="post-nav">
     
-    <a class="prev" href="http://blog.kingzcheung.com/posts/docker-brigde-conn/"><span>←</span><span>Docker 容器启动后造成服务器无法连接的问题</span></a>
+    <a class="prev" href="/posts/docker-brigde-conn/"><span>←</span><span>Docker 容器启动后造成服务器无法连接的问题</span></a>
      
   </nav>
   
@@ -270,7 +270,7 @@ swoole.unixsock_buffer_size <span style="color:#f92672">=</span>&gt; 262144 <spa
 </main>
 
     <footer class="footer">
-  <p>&copy; 2021 <a href="http://blog.kingzcheung.com/">kingzcheung</a></p>
+  <p>&copy; 2021 <a href="/">kingzcheung</a></p>
   <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
   <p>
     <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
