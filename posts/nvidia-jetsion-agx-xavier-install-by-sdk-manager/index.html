@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+<html lang="en-us">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  
+  <title>NVIDIA JETSON AGX XAVIER 在 ubuntu 20.04 刷不了机问题 - kingzcheung</title>
+
+  
+  
+  <meta name="description" content="目前 xavier 只支持在 18.04 上进行刷机，最新的ubuntu lts 20.04 上安装sdkmanager 后，会提示
+ SDK Manager No available releases for Ubuntu 20.04
+ 事实上，sdkmanager 只支持 18.04 上开发，后面的版本都不支持。不过，我们可以假装高于18.04版本的ubuntu 为 18.04，以此来达到欺骗 sdkmanager 来走下去。
+ 先备份 /usr/lib/os-release  sudo cp /usr/lib/os-release /usr/lib/os-release-bak 再编辑 /usr/lib/os-release,内容如下  NAME=&quot;Ubuntu&quot; VERSION=&quot;18.04.5 LTS (Bionic Beaver)&quot; ID=ubuntu ID_LIKE=debian PRETTY_NAME=&quot;Ubuntu 18.04.5 LTS&quot; VERSION_ID=&quot;18.04&quot; HOME_URL=&quot;https://www.ubuntu.com/&quot; SUPPORT_URL=&quot;https://help.ubuntu.com/&quot; BUG_REPORT_URL=&quot;https://bugs.launchpad.net/ubuntu/&quot; PRIVACY_POLICY_URL=&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot; VERSION_CODENAME=bionic UBUNTU_CODENAME=bionic 运行 sdkmanager  重要 当完成sdkmanager 工作后，需要恢复原来的配置：
+sudo cp /usr/lib/os-release-bak /usr/lib/os-release " />
+  <meta name="author" content="" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="/app.min.css" />
+
+  
+  <link rel="preload stylesheet" as="style" href="/an-old-hope.min.css" />
+  <script
+    defer
+    src="/highlight.min.js"
+    onload="hljs.initHighlightingOnLoad();"
+  ></script>
+  
+
+  
+  <link rel="preload" as="image" href="/theme.png" />
+
+  
+
+  
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  <meta property="og:title" content="NVIDIA JETSON AGX XAVIER 在 ubuntu 20.04 刷不了机问题" />
+<meta property="og:description" content="目前 xavier 只支持在 18.04 上进行刷机，最新的ubuntu lts 20.04 上安装sdkmanager 后，会提示
+ SDK Manager No available releases for Ubuntu 20.04
+ 事实上，sdkmanager 只支持 18.04 上开发，后面的版本都不支持。不过，我们可以假装高于18.04版本的ubuntu 为 18.04，以此来达到欺骗 sdkmanager 来走下去。
+ 先备份 /usr/lib/os-release  sudo cp /usr/lib/os-release /usr/lib/os-release-bak 再编辑 /usr/lib/os-release,内容如下  NAME=&quot;Ubuntu&quot; VERSION=&quot;18.04.5 LTS (Bionic Beaver)&quot; ID=ubuntu ID_LIKE=debian PRETTY_NAME=&quot;Ubuntu 18.04.5 LTS&quot; VERSION_ID=&quot;18.04&quot; HOME_URL=&quot;https://www.ubuntu.com/&quot; SUPPORT_URL=&quot;https://help.ubuntu.com/&quot; BUG_REPORT_URL=&quot;https://bugs.launchpad.net/ubuntu/&quot; PRIVACY_POLICY_URL=&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot; VERSION_CODENAME=bionic UBUNTU_CODENAME=bionic 运行 sdkmanager  重要 当完成sdkmanager 工作后，需要恢复原来的配置：
+sudo cp /usr/lib/os-release-bak /usr/lib/os-release " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/nvidia-jetsion-agx-xavier-install-by-sdk-manager/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-01T17:09:14+08:00" />
+<meta property="article:modified_time" content="2021-12-01T17:09:14+08:00" />
+
+
+  
+  <meta itemprop="name" content="NVIDIA JETSON AGX XAVIER 在 ubuntu 20.04 刷不了机问题">
+<meta itemprop="description" content="目前 xavier 只支持在 18.04 上进行刷机，最新的ubuntu lts 20.04 上安装sdkmanager 后，会提示
+ SDK Manager No available releases for Ubuntu 20.04
+ 事实上，sdkmanager 只支持 18.04 上开发，后面的版本都不支持。不过，我们可以假装高于18.04版本的ubuntu 为 18.04，以此来达到欺骗 sdkmanager 来走下去。
+ 先备份 /usr/lib/os-release  sudo cp /usr/lib/os-release /usr/lib/os-release-bak 再编辑 /usr/lib/os-release,内容如下  NAME=&quot;Ubuntu&quot; VERSION=&quot;18.04.5 LTS (Bionic Beaver)&quot; ID=ubuntu ID_LIKE=debian PRETTY_NAME=&quot;Ubuntu 18.04.5 LTS&quot; VERSION_ID=&quot;18.04&quot; HOME_URL=&quot;https://www.ubuntu.com/&quot; SUPPORT_URL=&quot;https://help.ubuntu.com/&quot; BUG_REPORT_URL=&quot;https://bugs.launchpad.net/ubuntu/&quot; PRIVACY_POLICY_URL=&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot; VERSION_CODENAME=bionic UBUNTU_CODENAME=bionic 运行 sdkmanager  重要 当完成sdkmanager 工作后，需要恢复原来的配置：
+sudo cp /usr/lib/os-release-bak /usr/lib/os-release "><meta itemprop="datePublished" content="2021-12-01T17:09:14+08:00" />
+<meta itemprop="dateModified" content="2021-12-01T17:09:14+08:00" />
+<meta itemprop="wordCount" content="59">
+<meta itemprop="keywords" content="" />
+  
+  <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NVIDIA JETSON AGX XAVIER 在 ubuntu 20.04 刷不了机问题"/>
+<meta name="twitter:description" content="目前 xavier 只支持在 18.04 上进行刷机，最新的ubuntu lts 20.04 上安装sdkmanager 后，会提示
+ SDK Manager No available releases for Ubuntu 20.04
+ 事实上，sdkmanager 只支持 18.04 上开发，后面的版本都不支持。不过，我们可以假装高于18.04版本的ubuntu 为 18.04，以此来达到欺骗 sdkmanager 来走下去。
+ 先备份 /usr/lib/os-release  sudo cp /usr/lib/os-release /usr/lib/os-release-bak 再编辑 /usr/lib/os-release,内容如下  NAME=&quot;Ubuntu&quot; VERSION=&quot;18.04.5 LTS (Bionic Beaver)&quot; ID=ubuntu ID_LIKE=debian PRETTY_NAME=&quot;Ubuntu 18.04.5 LTS&quot; VERSION_ID=&quot;18.04&quot; HOME_URL=&quot;https://www.ubuntu.com/&quot; SUPPORT_URL=&quot;https://help.ubuntu.com/&quot; BUG_REPORT_URL=&quot;https://bugs.launchpad.net/ubuntu/&quot; PRIVACY_POLICY_URL=&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot; VERSION_CODENAME=bionic UBUNTU_CODENAME=bionic 运行 sdkmanager  重要 当完成sdkmanager 工作后，需要恢复原来的配置：
+sudo cp /usr/lib/os-release-bak /usr/lib/os-release "/>
+
+  
+  
+</head>
+
+
+  <body class="not-ready" data-menu="false">
+    <header class="header">
+  
+  <p class="logo">
+    <a class="site-name" href="/">kingzcheung</a><a class="btn-dark"></a>
+  </p>
+  
+
+  <script>
+    let bodyClx = document.body.classList;
+    let btnDark = document.querySelector('.btn-dark');
+    let sysDark = window.matchMedia('(prefers-color-scheme: dark)');
+    let darkVal = localStorage.getItem('dark');
+
+    let setDark = (isDark) => {
+      bodyClx[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark ? 'yes' : 'no');
+    };
+
+    setDark(darkVal ? darkVal === 'yes' : sysDark.matches);
+    requestAnimationFrame(() => bodyClx.remove('not-ready'));
+
+    btnDark.addEventListener('click', () => setDark(!bodyClx.contains('dark')));
+    sysDark.addEventListener('change', (event) => setDark(event.matches));
+  </script>
+
+  
+  
+
+  
+</header>
+
+
+    <main class="main">
+
+<article class="post-single">
+  <header class="post-title">
+    <p>
+      <time>Dec 1, 2021</time>
+      
+    </p>
+    <h1>NVIDIA JETSON AGX XAVIER 在 ubuntu 20.04 刷不了机问题</h1>
+  </header>
+  <section class="post-content"><p>目前 xavier 只支持在 18.04 上进行刷机，最新的ubuntu lts  20.04 上安装sdkmanager 后，会提示</p>
+<blockquote>
+<p>SDK Manager No available releases for Ubuntu 20.04</p>
+</blockquote>
+<p>事实上，sdkmanager 只支持 18.04 上开发，后面的版本都不支持。不过，我们可以假装高于18.04版本的ubuntu 为 18.04，以此来达到欺骗 sdkmanager 来走下去。</p>
+<ol>
+<li>先备份 <code>/usr/lib/os-release</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo cp /usr/lib/os-release /usr/lib/os-release-bak
+</code></pre></div><ol start="2">
+<li>再编辑 <code>/usr/lib/os-release</code>,内容如下</li>
+</ol>
+<pre tabindex="0"><code>NAME=&quot;Ubuntu&quot;
+VERSION=&quot;18.04.5 LTS (Bionic Beaver)&quot;
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME=&quot;Ubuntu 18.04.5 LTS&quot;
+VERSION_ID=&quot;18.04&quot;
+HOME_URL=&quot;https://www.ubuntu.com/&quot;
+SUPPORT_URL=&quot;https://help.ubuntu.com/&quot;
+BUG_REPORT_URL=&quot;https://bugs.launchpad.net/ubuntu/&quot;
+PRIVACY_POLICY_URL=&quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&quot;
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
+</code></pre><ol start="3">
+<li>运行 <code>sdkmanager</code></li>
+</ol>
+<h3 id="重要">重要</h3>
+<p>当完成sdkmanager 工作后，需要恢复原来的配置：</p>
+<pre tabindex="0"><code>sudo cp /usr/lib/os-release-bak /usr/lib/os-release
+</code></pre></section>
+
+  
+  
+
+  
+  
+  
+  <nav class="post-nav">
+     
+    <a class="next" href="/posts/antlr4-base-rule/"><span>ANTLR4 匹配基础数据类型常用词法规则</span><span>→</span></a>
+    
+  </nav>
+  
+
+  
+  
+</article>
+
+</main>
+
+    <footer class="footer">
+  <p>&copy; 2021 <a href="/">kingzcheung</a></p>
+  <p>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</p>
+  <p>
+    <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper 5.1</a>
+  </p>
+</footer>
+
+  </body>
+</html>

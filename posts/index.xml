@@ -6,7 +6,20 @@
     <description>Recent content in Posts on kingzcheung</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Oct 2020 12:08:42 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Dec 2021 17:09:14 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NVIDIA JETSON AGX XAVIER 在 ubuntu 20.04 刷不了机问题</title>
+      <link>/posts/nvidia-jetsion-agx-xavier-install-by-sdk-manager/</link>
+      <pubDate>Wed, 01 Dec 2021 17:09:14 +0800</pubDate>
+      
+      <guid>/posts/nvidia-jetsion-agx-xavier-install-by-sdk-manager/</guid>
+      <description>目前 xavier 只支持在 18.04 上进行刷机，最新的ubuntu lts 20.04 上安装sdkmanager 后，会提示
+ SDK Manager No available releases for Ubuntu 20.04
+ 事实上，sdkmanager 只支持 18.04 上开发，后面的版本都不支持。不过，我们可以假装高于18.04版本的ubuntu 为 18.04，以此来达到欺骗 sdkmanager 来走下去。
+ 先备份 /usr/lib/os-release  sudo cp /usr/lib/os-release /usr/lib/os-release-bak 再编辑 /usr/lib/os-release,内容如下  NAME=&amp;quot;Ubuntu&amp;quot; VERSION=&amp;quot;18.04.5 LTS (Bionic Beaver)&amp;quot; ID=ubuntu ID_LIKE=debian PRETTY_NAME=&amp;quot;Ubuntu 18.04.5 LTS&amp;quot; VERSION_ID=&amp;quot;18.04&amp;quot; HOME_URL=&amp;quot;https://www.ubuntu.com/&amp;quot; SUPPORT_URL=&amp;quot;https://help.ubuntu.com/&amp;quot; BUG_REPORT_URL=&amp;quot;https://bugs.launchpad.net/ubuntu/&amp;quot; PRIVACY_POLICY_URL=&amp;quot;https://www.ubuntu.com/legal/terms-and-policies/privacy-policy&amp;quot; VERSION_CODENAME=bionic UBUNTU_CODENAME=bionic 运行 sdkmanager  重要 当完成sdkmanager 工作后，需要恢复原来的配置：
+sudo cp /usr/lib/os-release-bak /usr/lib/os-release </description>
+    </item>
+    
     <item>
       <title>ANTLR4 匹配基础数据类型常用词法规则</title>
       <link>/posts/antlr4-base-rule/</link>
